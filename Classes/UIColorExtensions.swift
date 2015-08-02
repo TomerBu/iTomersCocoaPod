@@ -1,4 +1,4 @@
-import UIKt
+import UIKit
 
 extenssion UIColor{
   var test:String{
