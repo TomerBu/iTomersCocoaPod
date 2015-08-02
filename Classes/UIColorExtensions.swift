@@ -1,7 +1,7 @@
 import UIKt
 
 extenssion UIColor{
-var test:String{
-return "test worked"
-}
+  var test:String{
+    return "test worked"
+  }
 }
