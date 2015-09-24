@@ -34,8 +34,7 @@ struct MGCD {
         dispatch_async(dispatch_get_main_queue(), closure)
     }
     
-    static func doInBackground<T>(asyncClosure: () -> T, mainClosure:(result: T) -> ())
-    {
+    static func doInBackground<T>(asyncClosure: () -> T, mainClosure:(result: T) -> ()){
         dispatch_async(userInteractive) {
             let result = asyncClosure()
             dispatch_async(main) {
@@ -44,7 +43,7 @@ struct MGCD {
         }
     }
     
-        static func delay(seconds:Int, runAfter:()->Void){
+    static func delay(seconds:Int, runAfter:()->Void){
         //convert time to nanoSeconds : Int64
         let delay = Int64(seconds)*Int64(1e9)
         //init a dispatch_time_t from the delay
